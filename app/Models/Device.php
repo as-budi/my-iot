@@ -41,4 +41,15 @@ class Device
     public static function all(){
         return self::$devices;
     }
+
+    public static function find($id){
+        $devices = self::$devices;
+        $select_device = [];
+        foreach($devices as $device){
+            if($device["id"] == $id){
+                $select_device = $device;
+            }
+        };
+        return $select_device;
+    }
 }
