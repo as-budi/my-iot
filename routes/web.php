@@ -11,7 +11,12 @@ Route::get('/dashboard', function(){
 });
 
 Route::get('/devices', function(){
-    return view('devices');
+    return view('devices', [
+        "name" => "Sensor Suhu",
+        "min_value" => 0,
+        "max_value" => 100,
+        "current_value" => 25
+    ]);
 });
 
 Route::get('/rules', function(){
