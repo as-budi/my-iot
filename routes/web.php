@@ -13,12 +13,39 @@ Route::get('/dashboard', function(){
 });
 
 Route::get('/devices', function(){
+    $devices = [
+        [
+            "id" => 1,
+            "name" => "Sensor Suhu",
+            "min_value" => 0,
+            "max_value" => 100,
+            "current_value" => 25
+        ],
+        [
+            "id" => 2,
+            "name" => "Kipas Angin",
+            "min_value" => 0,
+            "max_value" => 5,
+            "current_value" => 2
+        ],
+        [
+            "id" => 3,
+            "name" => "Lampu Kamar",
+            "min_value" => 0,
+            "max_value" => 100,
+            "current_value" => 50
+        ],
+        [
+            "id" => 4,
+            "name" => "Lampu Taman",
+            "min_value" => 0,
+            "max_value" => 1,
+            "current_value" => 1
+        ]
+    ];
     return view('devices', [
         "title" => "devices",
-        "name" => "Sensor Suhu",
-        "min_value" => 0,
-        "max_value" => 100,
-        "current_value" => 25
+        "devices" => $devices 
     ]);
 });
 

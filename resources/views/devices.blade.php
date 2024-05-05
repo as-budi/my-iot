@@ -1,3 +1,6 @@
+
+@dd($devices)
+
 @extends('layouts.main')
 @section('container')
     <h1>Devices</h1>
