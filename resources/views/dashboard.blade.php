@@ -16,16 +16,16 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+                    <a class="nav-link active" aria-current="page" href="/dashboard">Dashboard</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#">Devices</a>
+                    <a class="nav-link" href="/devices">Devices</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#">Rules</a>
+                    <a class="nav-link" href="/rules">Rules</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#">Users</a>
+                    <a class="nav-link" href="/users">Users</a>
                     </li>
                 </ul>
                 </div>
