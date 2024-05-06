@@ -7,16 +7,21 @@
     @php
         $i = 1;
     @endphp
-    <table border="1" cellpadding="10" cellspacing="0">
-        <td>No</td>
-        <td>ID</td>
-        <td>Device Name</td>
-        <td>Min</td>
-        <td>Max</td>
-        <td>Current Value</td>
-        @foreach($devices as $device)
+    <table class="table">
+        <thead>
             <tr>
-                <td>{{ $i }}</td>
+                <th scope="col">#</th>
+                <th scope="col">ID</th>
+                <th scope="col">Device Name</th>
+                <th scope="col">Minimum Value</th>
+                <th scope="col">Maximum Value</th>
+                <th scope="col">Current Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($devices as $device)
+            <tr>
+                <th scope="row">{{ $i }}</th>
                 <td>
                     <a href="/devices/{{ $device["id"] }}">{{ $device["id"] }}</a>
                 </td>
@@ -29,6 +34,7 @@
                 $i++;
             @endphp
         @endforeach
-
+        </tbody>
+        
 @endsection
 
