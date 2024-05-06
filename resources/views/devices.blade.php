@@ -35,6 +35,6 @@
             @endphp
         @endforeach
         </tbody>
-        
+    </table>
 @endsection
 
