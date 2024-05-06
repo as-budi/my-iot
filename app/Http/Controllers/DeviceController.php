@@ -66,4 +66,18 @@ class DeviceController extends Controller
         }
 
     }
+
+    public function web_index(){
+        return view('devices', [
+            "title" => "devices",
+            "devices" => Device::all() 
+        ]);
+    }
+
+    public function web_show($id){
+        return view('device', [
+            "title" => "device",
+            "device" => Device::find($id)
+        ]);
+    }
 }
