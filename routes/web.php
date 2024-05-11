@@ -31,3 +31,5 @@ Route::get('/users', function(){
         "title" => "users"
     ]);
 });
+
+Route::post( '/publish', [DataController::class, 'publish'] )->name('publish');
