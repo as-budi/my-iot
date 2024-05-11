@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Console\Commands;
-require('vendor/autoload.php');
+// require('vendor/autoload.php');
 
 use \PhpMqtt\Client\MqttClient;
 use \PhpMqtt\Client\ConnectionSettings;
@@ -10,23 +10,9 @@ use Illuminate\Console\Command;
 
 class MqttListener extends Command
 {
-    /**
-     * The name and signature of the console command.
-     *
-     * @var string
-     */
     protected $signature = 'app:mqtt-listener';
-
-    /**
-     * The console command description.
-     *
-     * @var string
-     */
     protected $description = 'Command description';
 
-    /**
-     * Execute the console command.
-     */
     public function handle()
     {
         $server   = 'broker.emqx.io';
@@ -54,25 +40,15 @@ class MqttListener extends Command
         $mqtt->subscribe('emqx/test', function ($topic, $message) {
             printf("Received message on topic [%s]: %s\n", $topic, $message);
         }, 0);
-
         
         $payload = array(
             'protocol' => 'tcp',
             'date' => date('Y-m-d H:i:s'),
             'data' => 'Hello MQTT'
         );
-        $mqtt->publish(
-            // topic
-            'emqx/test',
-            // payload
-            json_encode($payload),
-            // qos
-            0,
-            // retain
-            true
-        );
-        printf("msg send\n");
         
+        $mqtt->publish('emqx/test', json_encode($payload), 0, true);
+        printf("msg published\n");
 
         $mqtt->loop(true);
     }
