@@ -18,3 +18,5 @@ Route::delete('/devices/{id}', [DeviceController::class, 'destroy']);
 Route::get('/data', [DataController::class, 'index']);
 Route::post('/data', [DataController::class, 'store']);
 Route::get('/data/{id}', [DataController::class, 'show']);
+
+Route::post('/mqtt', [DataController::class, 'pub']);
